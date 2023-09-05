@@ -14,6 +14,33 @@ const initdb = async () =>
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
 // Function to put content into the database
+// export const putDb = async (content) => {
+//   console.log('Putting content into the database');
+
+//   // Create a connection to the database database and version we want to use.
+//   const contactDb = await openDB('jate', 1);
+
+//   // Create a new transaction and specify the database and data privileges.
+//   const tx = contactDb.transaction('jate', 'readwrite');
+
+//   // Open up the desired object store.
+//   const store = tx.objectStore('jate');
+
+//   try {
+//     // Add the content to the object store.
+//     const result = await store.add({ content });
+
+//     // Check if the content was successfully added
+//     if (result) {
+//       console.log('Content added successfully:', result);
+//     } else {
+//       console.error('Failed to add content to the database');
+//     }
+//   } catch (error) {
+//     console.error('Error adding content to the database:', error);
+//   }
+// };
+
 export const putDb = async (content) => {
   console.log('Putting content into the database');
 
@@ -26,19 +53,9 @@ export const putDb = async (content) => {
   // Open up the desired object store.
   const store = tx.objectStore('jate');
 
-  try {
-    // Add the content to the object store.
-    const result = await store.add({ content });
-
-    // Check if the content was successfully added
-    if (result) {
-      console.log('Content added successfully:', result);
-    } else {
-      console.error('Failed to add content to the database');
-    }
-  } catch (error) {
-    console.error('Error adding content to the database:', error);
-  }
+  // Add the content to the object store.
+  const result = await request;
+  console.log('Content added successfully:', result);
 };
 
 // TODO: Add logic for a method that gets all the content from the database
