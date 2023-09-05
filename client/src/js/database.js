@@ -17,7 +17,7 @@ const initdb = async () =>
 export const putDb = async (content) => {
   console.log('Putting content into the database');
 
-  // Create a connection to the database database and version we want to use.
+  // Create a connection to the database and version we want to use.
   const contactDb = await openDB('jate', 1);
 
   // Create a new transaction and specify the database and data privileges.
@@ -27,19 +27,20 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   try {
-    // Add the content to the object store.
-    const result = await store.add({ content });
+    // Use the put method to update or insert a record.
+    const result = await store.put({ id: 1, value: content });
 
-    // Check if the content was successfully added
+    // Check if the content was successfully added or updated.
     if (result) {
-      console.log('Content added successfully:', result);
+      console.log('Content added/updated successfully:', result);
     } else {
-      console.error('Failed to add content to the database');
+      console.error('Failed to add/update content in the database');
     }
   } catch (error) {
-    console.error('Error adding content to the database:', error);
+    console.error('Error adding/updating content in the database:', error);
   }
 };
+
 
 // TODO: Add logic for a method that gets all the content from the database
 // Export a function we will use to GET to the database.
