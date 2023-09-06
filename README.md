@@ -2,7 +2,7 @@
 
 ## Description
 
-
+This application was built with the purpose of demonstrating the use case of a progressive web application. Much of the code for this application was supplied by the UTSA boot camp, and I was to implement certain features into it. Namely, I configured the webpack.config.js file, built caching into the application so it can be used offline, created funcitons to get and update data entered into the client, and built in event handlers to so the user can install the application for offline use.
 
 ## Table of Contents (Optional)
 
@@ -34,7 +34,7 @@ https://text-editor-utsa-61be1b363975.herokuapp.com/
 
 ## Usage
 
-
+The user can use this application to take and keep notes. The user can type into the application, and when they click away from the window, the notes will be saved to the IndexedDB.
 
 ## Contributing-Guidelines
 
@@ -75,11 +75,11 @@ Your pull request will be reviewed by the maintainers, who may provide feedback 
 
 ## Future-Development-Goals
 
-
+There are currently no further development plans with this application.
 
 ## Tests
 
-
+There are currently no tests written for this application.
 
 ## License
 
